@@ -1,4 +1,4 @@
-package io.github.andrew6rant.precise_armor;
+package io.github.andrew6rant.precise_armor_bar;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class ArmorRenderer extends DrawableHelper {
     public static final ArmorRenderer INSTANCE = new ArmorRenderer();
-    public static final Identifier ARMOR_ICONS = new Identifier("precise_armor", "textures/gui/precise_armor.png");
+    public static final Identifier ARMOR_ICONS = new Identifier("precise_armor_bar", "textures/gui/precise_armor.png");
 
     public void init(MatrixStack matrices, PlayerEntity player) {
         double armor = player.getAttributes().getValue(EntityAttributes.GENERIC_ARMOR);

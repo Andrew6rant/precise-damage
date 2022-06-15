@@ -1,6 +1,6 @@
-package io.github.andrew6rant.precise_armor.mixin.client;
+package io.github.andrew6rant.precise_armor_bar.mixin.client;
 
-import io.github.andrew6rant.precise_armor.ArmorRenderer;
+import io.github.andrew6rant.precise_armor_bar.ArmorRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;

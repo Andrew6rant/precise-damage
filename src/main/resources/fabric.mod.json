@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "id": "precise_armor",
   "version": "${version}",
-  "name": "Precise Armor",
-  "description": "Changes damage calculations to allow for fractional armor values.",
+  "name": "Precise Armor Bar",
+  "description": "Displays precise values for armor bars.",
   "authors": [
     "Andrew6rant (Andrew Grant)"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/precise_armor/icon.png",
+  "icon": "assets/precise_armor_bar/icon.png",
   "environment": "*",
   "entrypoints": {
   },
   "mixins": [
-    "precise_armor.mixins.json"
+    "precise_armor_bar.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.1",
