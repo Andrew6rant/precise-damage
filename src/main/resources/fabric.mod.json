@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "precise_armor",
+  "version": "${version}",
+  "name": "Precise Armor",
+  "description": "Changes damage calculations to allow for fractional armor values.",
+  "authors": [
+    "Andrew6rant (Andrew Grant)"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/precise_armor/icon.png",
+  "environment": "*",
+  "entrypoints": {
+  },
+  "mixins": [
+    "precise_armor.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.1",
+    "minecraft": [
+      "1.17.x",
+      "1.18.x",
+      "1.19.x"
+    ],
+    "java": ">=16"
+  }
+}
