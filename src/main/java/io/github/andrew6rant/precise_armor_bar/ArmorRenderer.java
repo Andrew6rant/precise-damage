@@ -34,33 +34,21 @@ public class ArmorRenderer extends DrawableHelper {
 
         if (armor > 0) {
             RenderSystem.setShaderTexture(0, ARMOR_ICONS);
-            for(int i = 0; i < armorLevel/2; ++i) {
+            for (int i = 0; i < armorLevel/2; ++i) {
                 x = m + i * 8;
-                drawTexture(matrices, x, y, 20, 20, 9, 9, 32, 32);
+                drawTexture(matrices, x, y, 10, 0, 9, 9, 32, 32);
             }
             double armorRemainder = armor%2;
+            int xOffset = ((armorLevel/2) * 8);
+            int armorOffset = (int) Math.round((armorRemainder/2)*9)-1;
+            // draw background of armor remainder
+            drawTexture(matrices, m + xOffset, y, 0, 0, 9, 9, 32, 32);
+            // draw armor remainder
+            drawTexture(matrices, m + xOffset, y, 10, 0, armorOffset, 9, 32, 32);
+            // draw armor remainder separator
+            drawTexture(matrices, m + xOffset + armorOffset, y, armorOffset, 10, 1, 9, 32, 32);
 
-            // doubles don't work with switch statements :(
-            if (armorRemainder > 0 && armorRemainder < 0.29) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 10, 0, 9, 9, 32, 32);
-            } else if (armorRemainder > 0.29 && armorRemainder < 0.57) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 20, 0, 9, 9, 32, 32);
-            } else if (armorRemainder > 0.57 && armorRemainder < 0.86) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 0, 10, 9, 9, 32, 32);
-            } else if (armorRemainder > 0.86 && armorRemainder < 1.14) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 10, 10, 9, 9, 32, 32);
-            } else if (armorRemainder > 1.14 && armorRemainder < 1.43) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 20, 10, 9, 9, 32, 32);
-            } else if (armorRemainder > 1.43 && armorRemainder < 1.71) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 0, 20, 9, 9, 32, 32);
-            } else if (armorRemainder > 1.71 && armorRemainder < 2) {
-                drawTexture(matrices, m + ((armorLevel/2) * 8), y, 10, 20, 9, 9, 32, 32);
-            } else {
-                if (armor != 20) { // if armor is 20, don't draw the last icon (this is temporary until I get >20 armor offsets working)
-                    drawTexture(matrices, m + ((armorLevel/2) * 8), y, 0, 0, 9, 9, 32, 32);
-                }
-            }
-            for(int i = 1; i < 10 - (armorLevel/2); ++i) {
+            for (int i = 1; i < 10 - (armorLevel/2); ++i) {
                 x = m + ((i + armorLevel/2) * 8);
                 drawTexture(matrices, x, y, 0, 0, 9, 9, 32, 32);
             }
