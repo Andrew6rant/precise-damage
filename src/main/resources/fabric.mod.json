@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "precise_armor",
+  "id": "precise_armor_bar",
   "version": "${version}",
   "name": "Precise Armor Bar",
   "description": "Displays precise values for armor bars.",
@@ -23,6 +23,7 @@
       "1.18.x",
       "1.19.x"
     ],
-    "java": ">=16"
+    "java": ">=16",
+    "precise_armor": ">=1.0"
   }
 }
