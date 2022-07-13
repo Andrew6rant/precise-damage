@@ -4,7 +4,8 @@
   "package": "io.github.andrew6rant.precise_armor.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PersistentProjectileEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
