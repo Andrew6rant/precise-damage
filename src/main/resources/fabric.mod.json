@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "precise_damage",
-  "version": "${version}",
+  "version": "precise_damage-1.1",
   "name": "Precise Damage",
   "description": "Changes damage calculations to allow for fractional values.",
   "authors": [
