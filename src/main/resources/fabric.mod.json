@@ -9,8 +9,8 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/precise-armor-bar",
-    "sources": "https://github.com/Andrew6rant/precise-armor/tree/main",
-    "issues": "https://github.com/Andrew6rant/precise-armor/issues"
+    "sources": "https://github.com/Andrew6rant/precise-damage/tree/armor-bar-rendering",
+    "issues": "https://github.com/Andrew6rant/precise-damage/issues"
   },
   "license": "MIT",
   "icon": "assets/precise_armor_bar/icon.png",
