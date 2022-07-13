@@ -1,4 +1,4 @@
-package io.github.andrew6rant.precise_armor.mixin;
+package io.github.andrew6rant.precise_damage.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;

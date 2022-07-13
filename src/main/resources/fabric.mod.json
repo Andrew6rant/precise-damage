@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "precise_armor",
+  "id": "precise_damage",
   "version": "${version}",
-  "name": "Precise Armor",
-  "description": "Changes damage calculations to allow for fractional armor values.",
+  "name": "Precise Damage",
+  "description": "Changes damage calculations to allow for fractional values.",
   "authors": [
     "Andrew6rant (Andrew Grant)"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/precise-armor",
-    "sources": "https://github.com/Andrew6rant/precise-armor/tree/api",
-    "issues": "https://github.com/Andrew6rant/precise-armor/issues"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/precise-damage",
+    "sources": "https://github.com/Andrew6rant/precise-damage/tree/api",
+    "issues": "https://github.com/Andrew6rant/precise-damage/issues"
   },
   "license": "MIT",
-  "icon": "assets/precise_armor/icon.png",
+  "icon": "assets/precise_damage/icon.png",
   "environment": "*",
   "entrypoints": {
   },
   "mixins": [
-    "precise_armor.mixins.json"
+    "precise_damage.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.1",
