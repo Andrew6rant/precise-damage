@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
+import net.minecraft.entity.attribute.DefaultAttributeRegistry;
+import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
@@ -21,14 +23,24 @@ public abstract class LivingEntityMixin extends Entity {
     @Final
     private final AttributeContainer attributes;
 
-    public LivingEntityMixin(EntityType<?> type, World world, AttributeContainer attributes) {
+    @Shadow
+    public double getAttributeValue(EntityAttribute attribute) {
+        return this.getAttributes().getValue(attribute);
+    }
+
+    @Shadow
+    public AttributeContainer getAttributes() {
+        return this.attributes;
+    }
+
+    public LivingEntityMixin(EntityType<? extends LivingEntity> type, World world) {
         super(type, world);
-        this.attributes = attributes;
+        this.attributes = new AttributeContainer(DefaultAttributeRegistry.get(type));
     }
 
     // get raw armor value instead of MathHelper.floor()'s int value
     @Redirect(method = "applyArmorToDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/DamageUtil;getDamageLeft(FFF)F"))
     private float applyArmorToDamage(float damage, float armor, float armorToughness) {
-        return DamageUtil.getDamageLeft(damage, (float) this.attributes.getValue(EntityAttributes.GENERIC_ARMOR), (float) this.attributes.getValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
+        return DamageUtil.getDamageLeft(damage, (float) this.getAttributeValue(EntityAttributes.GENERIC_ARMOR), (float) this.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
     }
 }
